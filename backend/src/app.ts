@@ -1,12 +1,12 @@
 import express from 'express';
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
-  res.send('Hello from the TypeScript backend!');
+    res.send(`This response is from proxy and running on port ${port}!`);
 });
 
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+    console.log(`Backend server is running on port ${port}`);
 });
