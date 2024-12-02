@@ -1,9 +1,14 @@
 config:
   target: "http://nginx"
   phases:
-    - duration: 120 # Test duration(sec)
-      arrivalRate: 50 # Send 50 requests per second
-
+    - duration: 10 # Test duration(sec)
+      arrivalRate: 5 # Send 50 requests per second
+    - duration: 10
+      arrivalRate: 20
+    - duration: 30
+      arrivalRate: 100
+    - duration: 10
+      arrivalRate: 20    
 scenarios:
   - flow:
       - get:
