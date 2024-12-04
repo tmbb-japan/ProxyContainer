@@ -3,6 +3,7 @@ services:
     image: nginx:latest
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/error.html:/usr/share/nginx/html/error.html
       - ./cert.pem:/etc/nginx/ssl/cert.pem
       - ./key.pem:/etc/nginx/ssl/key.pem
     ports:
