@@ -1,5 +1,5 @@
 FROM nginx:latest
-COPY conf/nginx.conf /etc/nginx/nginx.conf
+COPY nginx.conf /etc/nginx/nginx.conf
 # Install necessary packages
 RUN apt-get update && apt-get install -y tzdata
 

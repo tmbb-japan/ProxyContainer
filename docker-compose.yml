@@ -2,7 +2,7 @@ services:
   nginx:
     image: nginx:latest
     volumes:
-      - ./nginx/conf/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
       - ./nginx/error.html:/usr/share/nginx/html/error.html
       - ./nginx/logs:/var/log/nginx
       - ./cert.pem:/etc/nginx/ssl/cert.pem
@@ -16,6 +16,13 @@ services:
       - backend3
     environment:
       - TZ=Asia/Tokyo
+
+  logrotate:
+    image: alpine:latest
+    volumes:
+      - ./nginx/logs:/var/log/nginx
+    depends_on:
+      - nginx
   backend1:
     build: 
       context: ./backend
