@@ -18,11 +18,11 @@ services:
       - TZ=Asia/Tokyo
 
   logrotate:
-    image: alpine:latest
+    build: 
+      context: ./logrotate
     volumes:
       - ./nginx/logs:/var/log/nginx
-    depends_on:
-      - nginx
+
   backend1:
     build: 
       context: ./backend

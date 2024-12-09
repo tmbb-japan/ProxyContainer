@@ -1,7 +1,11 @@
-FROM alpine:latest
+FROM nginx:latest
 
-RUN apk add --no-cache logrotate
+RUN apt-get update && \
+    apt-get install -y logrotate && \
+    apt-get clean
 
 COPY logrotate.conf /etc/logrotate.d/nginx 
 
-CMD ["logrotate", "-f", "/etc/logrotate.d/nginx"]
+RUN chmod 0644 /etc/logrotate.d/nginx
+
+CMD ["tail", "-f", "/dev/null"]
