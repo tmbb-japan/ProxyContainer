@@ -22,6 +22,8 @@ services:
       context: ./logrotate
     volumes:
       - ./nginx/logs:/var/log/nginx
+    env_file:
+      - .env.aws
 
   backend1:
     build: 
