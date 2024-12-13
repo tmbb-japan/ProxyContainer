@@ -1,0 +1,2 @@
+172.18.0.7 - - [13/Dec/2024:15:41:43 +0900] "GET / HTTP/1.1" 301 169 "-" "Artillery (https://artillery.io)" "-"
+172.18.0.7 - - [13/Dec/2024:15:41:43 +0900] "GET / HTTP/1.1" 200 53 "-" "Artillery (https://artillery.io)" "-"
